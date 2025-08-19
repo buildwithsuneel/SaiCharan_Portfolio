@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Charan - Senior Researcher Portfolio</title>
+    <!-- Use Tailwind CSS for a modern, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define custom colors and fonts */
+        :root {
+            --dark-blue: #0f172a;
+            --primary-text: #e2e8f0;
+            --secondary-text: #94a3b8;
+            --accent-color: #64ffda;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-blue);
+            color: var(--primary-text);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Canvas for the new floating particles background */
+        #canvas-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        /* Custom styles for sections and elements */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        .skill-card, .project-card {
+            background-color: #1e293b;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .skill-card:hover, .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .cta-button {
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100">
+
+    <!-- Canvas for the animated floating particles background -->
+    <canvas id="canvas-background"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-slate-900 bg-opacity-70 backdrop-blur-md shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <ul class="flex justify-center space-x-6 md:space-x-12 text-sm font-semibold text-slate-300">
+                <li><a href="#about" class="hover:text-accent-color transition-colors duration-300">About</a></li>
+                <li><a href="#skills" class="hover:text-accent-color transition-colors duration-300">Skills</a></li>
+                <li><a href="#projects" class="hover:text-accent-color transition-colors duration-300">Projects</a></li>
+                <li><a href="#experience" class="hover:text-accent-color transition-colors duration-300">Experience</a></li>
+                <li><a href="#contact" class="hover:text-accent-color transition-colors duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center px-4">
+            <div class="space-y-4 max-w-2xl">
+                <p class="text-accent-color text-xl md:text-2xl font-medium animate-fade-in-up">Hello, my name is</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-200">Sai Charan.</h1>
+                <p class="text-2xl md:text-4xl font-semibold text-slate-400">I build insights from data.</p>
+                <p class="text-lg md:text-xl text-slate-400 max-w-xl mx-auto">
+                    A meticulous and results-driven Senior Researcher specializing in transforming raw information into actionable business intelligence.
+                </p>
+                <a href="#about" class="inline-block mt-8 px-6 py-3 font-semibold text-accent-color border-2 border-accent-color rounded-lg hover:bg-accent-color hover:text-slate-900 cta-button">
+                    Learn More
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 section-title">About Me</h2>
+            <div class="md:flex md:space-x-12 items-center">
+                <div class="flex-shrink-0 mb-8 md:mb-0 text-center">
+                    <!-- Profile Photo -->
+                    <img src="https://i.postimg.cc/CLpQrzdm/Sai-Charan-2.jpg" alt="Sai Charan Profile Photo" class="w-64 h-64 mx-auto rounded-full object-cover border-4 border-accent-color transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-accent-color/50">
+                </div>
+                <div class="text-lg leading-relaxed">
+                    <p>
+                        I am a meticulous and results-driven Senior Researcher with 2 years of experience at GlobalData. My expertise lies in leveraging advanced research tools and methodologies to deliver accurate, high-quality data. I specialize in transforming raw information into actionable business intelligence, driving lead generation, and supporting strategic growth.
+                    </p>
+                    <p class="mt-4">
+                        My day-to-day work involves using platforms like ZoomInfo and LinkedIn Sales Navigator to identify key decision-makers, perform market and account profiling, and conduct detailed competitor analysis. I am passionate about data-driven insights and committed to helping businesses make informed decisions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Competencies & Skills Section -->
+        <section id="skills" class="py-20 container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 section-title">Core Competencies & Skills</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Research Platforms -->
+                <div class="p-6 rounded-xl skill-card border-l-4 border-accent-color">
+                    <h3 class="text-xl font-bold text-accent-color mb-3">Research Platforms</h3>
+                    <ul class="list-disc list-inside space-y-1 text-slate-400">
+                        <li>ZoomInfo</li>
+                        <li>LinkedIn Sales Navigator</li>
+                    </ul>
+                </div>
+                <!-- Research Methodologies -->
+                <div class="p-6 rounded-xl skill-card border-l-4 border-accent-color">
+                    <h3 class="text-xl font-bold text-accent-color mb-3">Research Methodologies</h3>
+                    <ul class="list-disc list-inside space-y-1 text-slate-400">
+                        <li>Secondary & Primary Research</li>
+                        <li>Data Research & Validation</li>
+                        <li>Competitor Analysis</li>
+                    </ul>
+                </div>
+                <!-- Core Competencies -->
+                <div class="p-6 rounded-xl skill-card border-l-4 border-accent-color">
+                    <h3 class="text-xl font-bold text-accent-color mb-3">Core Competencies</h3>
+                    <ul class="list-disc list-inside space-y-1 text-slate-400">
+                        <li>Lead Generation</li>
+                        <li>Market & Account Profiling</li>
+                        <li>Data Sourcing & Enrichment</li>
+                    </ul>
+                </div>
+                <!-- Technical Skills -->
+                <div class="p-6 rounded-xl skill-card border-l-4 border-accent-color">
+                    <h3 class="text-xl font-bold text-accent-color mb-3">Technical Skills</h3>
+                    <ul class="list-disc list-inside space-y-1 text-slate-400">
+                        <li>Microsoft Excel</li>
+                        <li>(Pivot Tables, VLOOKUP)</li>
+                        <li>Data Cleaning & Sorting</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects & Case Studies Section -->
+        <section id="projects" class="py-20 container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 section-title">Projects & Case Studies</h2>
+            <div class="space-y-8">
+                <!-- Project 1 -->
+                <div class="p-6 rounded-xl project-card">
+                    <h3 class="text-2xl font-bold text-accent-color mb-2">Targeted Lead Generation for a New SaaS Product</h3>
+                    <p class="text-slate-300"><strong>Objective:</strong> To build a highly qualified list of 500+ potential leads for the sales team to support the launch of a new software product in the North American financial sector.</p>
+                    <p class="mt-2 text-slate-400"><strong>Process:</strong> Conducted secondary research to define ICPs, then used ZoomInfo and LinkedIn Sales Navigator to identify and vet key decision-makers. Verified and enriched all data manually.</p>
+                    <p class="mt-2 text-slate-300"><strong>Outcome:</strong> Delivered a list of 520 high-quality leads, resulting in a <strong>25% higher engagement rate</strong> for the initial sales outreach campaign compared to previous benchmarks.</p>
+                </div>
+                <!-- Project 2 -->
+                <div class="p-6 rounded-xl project-card">
+                    <h3 class="text-2xl font-bold text-accent-color mb-2">Market Expansion Analysis for EMEA Region</h3>
+                    <p class="text-slate-300"><strong>Objective:</strong> To assess the viability of expanding a specific service line into three new countries within the EMEA region.</p>
+                    <p class="mt-2 text-slate-400"><strong>Process:</strong> Performed extensive secondary research on market size and regulations. Conducted primary research outreach via LinkedIn to gather qualitative insights from industry professionals.</p>
+                    <p class="mt-2 text-slate-300"><strong>Outcome:</strong> Produced a comprehensive 20-page market analysis report with a clear "Go/No-Go" recommendation, saving significant exploratory costs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section id="experience" class="py-20 container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 section-title">Professional Experience</h2>
+            <div class="space-y-6">
+                <div class="p-6 rounded-xl project-card">
+                    <h3 class="text-2xl font-bold text-accent-color mb-1">Senior Researcher | GlobalData</h3>
+                    <p class="text-sm font-semibold text-slate-400"><em>[Month, Year] – Present</em></p>
+                    <ul class="list-disc list-inside space-y-1 mt-4 text-slate-300">
+                        <li>Spearheaded targeted lead generation campaigns for sales teams, consistently exceeding data quality and volume targets.</li>
+                        <li>Conducted in-depth primary and secondary research to support market intelligence reports and strategic business initiatives.</li>
+                        <li>Utilized ZoomInfo and LinkedIn Sales Navigator daily to identify, vet, and enrich data on key accounts.</li>
+                        <li>Managed and cleaned large datasets using Microsoft Excel to ensure accuracy for client delivery.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 container mx-auto px-4 text-center max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 section-title">Contact Me</h2>
+            <p class="text-lg mb-6">I am always interested in discussing data, research, and market strategy. Let's connect.</p>
+            <p class="text-xl font-bold">
+                <a href="mailto:saicharan.asupati11@gmail.com" class="text-accent-color hover:underline">saicharan.asupati11@gmail.com</a>
+            </p>
+            <p class="mt-2 text-lg">
+                <a href="https://linkedin.com/in/your-profile-url" target="_blank" class="text-accent-color hover:underline">linkedin.com/in/your-profile-url</a>
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-sm text-slate-500">
+        <p>&copy; 2024 by Sai Charan. All rights reserved.</p>
+        <p>Telanagana India 500084</p>
+    </footer>
+
+    <script>
+        // === JavaScript for the Floating Particles Background ===
+        const canvas = document.getElementById('canvas-background');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+
+        // Configuration for the particle system
+        const particles = [];
+        const maxParticles = 80;
+        const particleColor = 'rgba(100, 255, 218, 0.8)';
+
+        // Particle class
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 1.5 - 0.75;
+                this.speedY = Math.random() * 1.5 - 0.75;
+                this.color = particleColor;
+            }
+
+            // Method to update particle position
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Reverse direction if particle hits canvas edge
+                if (this.x < 0 || this.x > width) this.speedX *= -1;
+                if (this.y < 0 || this.y > height) this.speedY *= -1;
+            }
+
+            // Method to draw the particle
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Initialize particles
+        function init() {
+            particles.length = 0;
+            for (let i = 0; i < maxParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+        
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            // Create a semi-transparent overlay to create a "trailing" effect
+            ctx.fillStyle = 'rgba(15, 23, 42, 0.2)'; // Fills with a semi-transparent dark blue
+            ctx.fillRect(0, 0, width, height);
+            
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+        }
+        
+        // Function to handle canvas resize
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            init();
+        }
+
+        // Event listener for window resize
+        window.addEventListener('resize', resizeCanvas);
+
+        // Initialize and start the animation on window load
+        window.onload = function () {
+            resizeCanvas();
+            animate();
+        };
+    </script>
+</body>
+</html>
